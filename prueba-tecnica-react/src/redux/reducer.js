@@ -1,24 +1,20 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  value: 0,
+  logIn: {},
 };
 
+
 export const slice = createSlice({
-  name: "store",
+  name: "store",    
   initialState,
   reducers: {
-    increment: (state) => {
-      state.value += 1;
-    },
-    decrement: (state) => {
-      state.value -= 1;
-    },
-    incrementByAmount: (state, action) => {
-      state.value = action.payload;
-    },
+    setLogIn: (state, action) => {
+      state.logIn = action.payload
+      console.log(state.logIn);
+    }
   },
 });
 
-export const { increment, decrement, incrementByAmount } = slice.actions;
+export const { increment, decrement, incrementByAmount, setLogIn } = slice.actions;
 export default slice.reducer;

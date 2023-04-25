@@ -1,11 +1,18 @@
-import "./App.css";
-import { Counter } from "./components/Counter";
+import { Login } from "./components/Login";
+import { Chat, Inicio, NavBar } from "./components";
+import { Routes, Route, useLocation } from "react-router-dom";
 
 function App() {
+  const location = useLocation();
   return (
     <>
-      <h1>prueba tecnica react</h1>
-      <Counter />
+      {location.pathname !== "/" && <NavBar />}
+      <Routes>
+        <Route path="/" element={<Login />} />
+        <Route path="/inicio" element={<Inicio/>} />
+        <Route path="/chat" element={<Chat/>} />
+        <Route path="/" element={<Login/>} />
+      </Routes>
     </>
   );
 }
