@@ -3,10 +3,12 @@ import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
 import { setLogIn } from "../redux/reducer";
+import { setItem } from "../utils/localStorage";
 
 export function useForm(initialForm, validateForm) {
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const URL = "https://pbakxq15qi.execute-api.us-west-2.amazonaws.com/testing"
 
   const [form, setForm] = useState(initialForm);
   const [errors, setErrors] = useState({});
@@ -29,7 +31,7 @@ export function useForm(initialForm, validateForm) {
     setErrors(validateForm(form));
     if (Object.keys(errors).length === 0) {
       setLoading(true);
-      fetch("https://pbakxq15qi.execute-api.us-west-2.amazonaws.com/testing", {
+      fetch(URL, {
         method: "POST",
         body: JSON.stringify(form),
         headers: {
@@ -39,6 +41,7 @@ export function useForm(initialForm, validateForm) {
         .then(() => {
           setLoading(false);
           dispatch(setLogIn(form));
+          setItem('logIn', form)
           navigate('/inicio')
         })
         .catch(() => {

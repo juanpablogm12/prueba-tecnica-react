@@ -1,7 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { getItem } from "../utils/localStorage";
 
 const initialState = {
-  logIn: {},
+  logIn: getItem('logIn') || {},
 };
 
 
