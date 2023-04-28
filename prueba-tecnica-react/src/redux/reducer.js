@@ -12,7 +12,6 @@ export const slice = createSlice({
   reducers: {
     setLogIn: (state, action) => {
       state.logIn = action.payload
-      console.log(state.logIn);
     }
   },
 });

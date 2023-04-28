@@ -11,7 +11,6 @@ function App() {
         <Route path="/" element={<Login />} />
         <Route path="/inicio" element={<Inicio/>} />
         <Route path="/chat" element={<Chat/>} />
-        <Route path="/" element={<Login/>} />
       </Routes>
     </>
   );

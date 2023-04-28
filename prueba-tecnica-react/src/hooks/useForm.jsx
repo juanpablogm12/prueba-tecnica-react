@@ -13,7 +13,7 @@ export function useForm(initialForm, validateForm) {
   const [form, setForm] = useState(initialForm);
   const [errors, setErrors] = useState({});
   const [loading, setLoading] = useState(false);
-  const [alert, setAlert] = useState(false);
+  const [open, setOpen] = useState(false);
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -46,7 +46,7 @@ export function useForm(initialForm, validateForm) {
         })
         .catch(() => {
           setLoading(false);
-          setAlert(true);
+          setOpen(true);
         });
     } else {
       return;
@@ -56,8 +56,8 @@ export function useForm(initialForm, validateForm) {
     form,
     errors,
     loading,
-    alert,
-    setAlert,
+    open,
+    setOpen,
     handleChange,
     handleBlur,
     handleSubmit,

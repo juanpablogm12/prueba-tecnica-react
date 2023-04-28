@@ -1,1 +1,22 @@
 
+.message--rigth--text{
+    background-color: #4ECCA3;
+    color: #EEEEEE;
+    padding: 4px;
+    border-radius: 5px;
+    max-width: 70%;
+}
+
+.message--left--text{
+    background-color: #232931;
+    color: #EEEEEE;
+    padding: 4px;
+    border-radius: 5px;
+    max-width: 70%;
+}
+
+.bienvenido {
+    color: red;
+    font-family: 'Fraunces', serif;
+    font-family: 'Inconsolata', monospace;
+}

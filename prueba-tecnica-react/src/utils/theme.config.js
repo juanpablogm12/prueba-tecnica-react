@@ -10,13 +10,16 @@ export const theme = createTheme({
         primary: "#EEEEEE",
     },
     background: {
-      default: "#232931",
-      paper: "#393E46",
+      default: "#393E46",
+      paper: "#121820",
     },
   },
   typography: {
     h3: {
-      color: "#EEEEEE",
+      color: "#4ECCA3",
     },
+    h1: {
+      color: "#4ECCA3"
+    }
   },
 });
