@@ -1,14 +1,14 @@
-import { useState } from "react";
-import { useDispatch } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 
-import { setLogIn } from "../redux/reducer";
-import { setItem } from "../utils/localStorage";
+import { setLogIn } from '../redux/reducer';
+import { setItem } from '../utils/localStorage';
 
 export function useForm(initialForm, validateForm) {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const URL = "https://pbakxq15qi.execute-api.us-west-2.amazonaws.com/testing"
+  const URL = 'https://pbakxq15qi.execute-api.us-west-2.amazonaws.com/testing';
 
   const [form, setForm] = useState(initialForm);
   const [errors, setErrors] = useState({});
@@ -32,17 +32,17 @@ export function useForm(initialForm, validateForm) {
     if (Object.keys(errors).length === 0) {
       setLoading(true);
       fetch(URL, {
-        method: "POST",
+        method: 'POST',
         body: JSON.stringify(form),
         headers: {
-          "Content-Type": "application/json",
+          'Content-Type': 'application/json',
         },
       })
         .then(() => {
           setLoading(false);
           dispatch(setLogIn(form));
-          setItem('logIn', form)
-          navigate('/inicio')
+          setItem('logIn', form);
+          navigate('/home');
         })
         .catch(() => {
           setLoading(false);

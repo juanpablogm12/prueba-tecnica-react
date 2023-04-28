@@ -1,25 +1,28 @@
-import { createTheme } from "@mui/material";
+import { createTheme } from '@mui/material';
 
 export const theme = createTheme({
   palette: {
-    mode: "dark",
+    mode: 'dark',
     primary: {
-      main: "#4ECCA3",
+      main: '#4ECCA3',
     },
-    text : {
-        primary: "#EEEEEE",
+    text: {
+      primary: '#EEEEEE',
     },
     background: {
-      default: "#393E46",
-      paper: "#121820",
+      default: '#393E46',
+      paper: '#121820',
     },
   },
   typography: {
     h3: {
-      color: "#4ECCA3",
+      color: '#4ECCA3',
     },
     h1: {
-      color: "#4ECCA3"
-    }
+      color: '#4ECCA3',
+    },
+    h4: {
+      color: '#393E46',
+    },
   },
 });

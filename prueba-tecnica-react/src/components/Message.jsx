@@ -1,10 +1,14 @@
-import { MessageLeft } from "./MessageLeft";
-import { MessageRigth } from "./MessageRigth";
+import { MessageLeft } from './MessageLeft';
+import { MessageRigth } from './MessageRigth';
 
 export function Message(props) {
   return (
     <>
-      {props.sender === 'customer' ? <MessageLeft {...props} /> : <MessageRigth {...props} />}
+      {props.sender === 'customer' ? (
+        <MessageLeft {...props} />
+      ) : (
+        <MessageRigth {...props} />
+      )}
     </>
   );
 }

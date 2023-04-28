@@ -1,20 +1,20 @@
-import { createSlice } from "@reduxjs/toolkit";
-import { getItem } from "../utils/localStorage";
+import { createSlice } from '@reduxjs/toolkit';
+import { getItem } from '../utils/localStorage';
 
 const initialState = {
   logIn: getItem('logIn') || {},
 };
 
-
 export const slice = createSlice({
-  name: "store",    
+  name: 'store',
   initialState,
   reducers: {
     setLogIn: (state, action) => {
-      state.logIn = action.payload
-    }
+      state.logIn = action.payload;
+    },
   },
 });
 
-export const { increment, decrement, incrementByAmount, setLogIn } = slice.actions;
+export const { increment, decrement, incrementByAmount, setLogIn } =
+  slice.actions;
 export default slice.reducer;
